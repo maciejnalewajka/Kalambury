@@ -4,24 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/titleFragment">
+
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.android.kalambury.screens.title.TitleFragment"
-        android:label="TitleFragment" >
+        android:label="TitleFragment"
+        tools:layout="@layout/title_fragment">
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:launchSingleTop="true" />
     </fragment>
+
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.android.kalambury.screens.game.GameFragment"
-        android:label="GameFragment" >
+        android:label="GameFragment"
+        tools:layout="@layout/game_fragment">
         <action
             android:id="@+id/action_gameFragment_to_scoreFragment"
-            app:destination="@id/scoreFragment" />
+            app:destination="@id/scoreFragment"
+            app:launchSingleTop="true" />
     </fragment>
+
     <fragment
         android:id="@+id/scoreFragment"
         android:name="com.example.android.kalambury.screens.score.ScoreFragment"
-        android:label="ScoreFragment" />
+        android:label="ScoreFragment"
+        tools:layout="@layout/score_fragment">
+        <action
+            android:id="@+id/restart_action"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="pkt"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

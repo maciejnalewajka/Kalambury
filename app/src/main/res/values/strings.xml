@@ -2,4 +2,11 @@
     <string name="app_name">Kalambury</string>
     <string name="kalambury">Kalambury</string>
     <string name="start">start</string>
+    <string name="o_no">oł noł</string>
+    <string name="o_je">oł je</string>
+    <string name="_00_00">00:00</string>
+    <string name="pkt_0">pkt: 0</string>
+    <string name="zgadnij">zgadnij</string>
+    <string name="an_mor_tajm">łan mor tajm</string>
+    <string name="pkt_format">pkt: %d</string>
 </resources>
