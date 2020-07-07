@@ -17,6 +17,7 @@ class ScoreFragment : Fragment(){
 
     private lateinit var viewModel : ScoreViewModel
     private lateinit var viewModelFactory: ScoreViewModelFactory
+    private var sound: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,12 +30,14 @@ class ScoreFragment : Fragment(){
         val scoreFragmentsArgs by navArgs<ScoreFragmentArgs>()
         viewModelFactory = ScoreViewModelFactory(scoreFragmentsArgs.pkt)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ScoreViewModel::class.java)
+        sound = viewModel.soundpol.load(this.context, R.raw.steal, 1)
 
         binding.scoreViewModel = viewModel
         binding.lifecycleOwner = this
 
         viewModel.eventLanMorTajm.observe(viewLifecycleOwner, Observer { playAgain ->
             if (playAgain) {
+                viewModel.soundpol.play(sound, 1F,1F,0,0,1F)
                 findNavController().navigate(ScoreFragmentDirections.restartAction())
                 viewModel.onPlayAgainComplete()
             }
