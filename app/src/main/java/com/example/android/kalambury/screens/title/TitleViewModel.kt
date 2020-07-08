@@ -1,7 +1,5 @@
 package com.example.android.kalambury.screens.title
 
-import android.content.Context
-import android.content.ContextWrapper
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
